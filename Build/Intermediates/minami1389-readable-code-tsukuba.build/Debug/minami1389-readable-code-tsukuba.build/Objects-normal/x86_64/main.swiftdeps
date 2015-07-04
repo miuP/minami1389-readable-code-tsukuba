@@ -3,8 +3,8 @@ provides:
 nominals:
 class-members:
 top-level:
-- "StringLiteralType"
 - "println"
+- "StringLiteralType"
 member-access:
 dynamic-lookup:
 cross-module:
