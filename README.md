@@ -66,3 +66,20 @@ if let recipe = String(contentsOfFile: recipeDataFileName, encoding: NSUTF8Strin
 ```
 
 ###3.実行する
+
+##仕様7 
+
+### "recipe-data.txt"の形式
+
+```
+オムライス 卵を焼いてごはんにのせる
+親子丼 鶏肉を焼いて卵でとじてごはんにのせる
+杏仁豆腐 牛乳と砂糖をまぜてゼラチンで固める
+```
+のように`name description`を行ごとに書く
+
+### 動作
+- 標準入力待ち
+- 入力にIntを与えるとそのidにひも付けられたレシピを表示する。
+
+
