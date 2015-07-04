@@ -16,13 +16,17 @@ func main() {
     let recipeDataFileName = kFileRepositryPath + "recipe-data.txt"
     if let recipes = String(contentsOfFile: recipeDataFileName, encoding: NSUTF8StringEncoding, error: nil) {
         let recipesArray = createRecipeArray(recipes)
+        let username = getStringByStdIn()
         let input = getIntByStdIn()
-        if input == 0 {
+
+        println("ユーザー名: \(username)")
+
+        if input == 0 || input == nil {
             println("display All Recipe")
             displayRecipes(recipesArray)
         } else {
-            println("display ID:\(input) Recipe")
-            recipesArray[input - 1].print()
+            println("display ID:\(input!) Recipe")
+            findRecipeById(input!, recipesArray).map { $0.print }
         }
     }
     
@@ -47,13 +51,31 @@ func createRecipeArray(recipes: String) -> [Recipe] {
 
 }
 
-func getIntByStdIn() -> Int {
+func getStringByStdIn() -> String {
+    println("input recipe username(String)")
+    var handle = NSFileHandle.fileHandleWithStandardInput()
+    var data = handle.availableData
+    var str = NSString(data: data, encoding:NSUTF8StringEncoding)
+    return str as! String
+}
+
+func getIntByStdIn() -> Int? {
+    println("input recipe id(Int) or push Rerurn Key")
     let input = NSFileHandle.fileHandleWithStandardInput()
     let str = NSString(data: input.availableData, encoding: NSUTF8StringEncoding)
     let scanner = NSScanner(string: str! as String)
     var value: Int = 0
     let result = scanner.scanInteger(&value)
-    return value
+    return result ? value : nil
+}
+
+func findRecipeById(id: Int, recipes: [Recipe]) -> Recipe? {
+    for (var i = 0; i < count(recipes); i++) {
+        if i == id {
+            return recipes[i]
+        }
+    }
+    return nil
 }
 
 func displayRecipes(recipes: [Recipe]) {
