@@ -13,5 +13,11 @@ let kFileRepositryPath = "/Users/minami/readable-code/minami1389-readable-code-t
 
 let recipeDataFileName = kFileRepositryPath + "recipe-data.txt"
 if let recipe = String(contentsOfFile: recipeDataFileName, encoding: NSUTF8StringEncoding, error: nil) {
-    println(recipe)
+    
+    //1行ごとに文字列を抜き出す
+    recipe.enumerateLines({
+        line, stop in
+        println(line)
+    })
+    
 }
