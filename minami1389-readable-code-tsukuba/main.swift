@@ -12,12 +12,13 @@ import Foundation
 let kFileRepositryPath = "/Users/minami/readable-code/minami1389-readable-code-tsukuba/minami1389-readable-code-tsukuba/"
 
 let recipeDataFileName = kFileRepositryPath + "recipe-data.txt"
-if let recipe = String(contentsOfFile: recipeDataFileName, encoding: NSUTF8StringEncoding, error: nil) {
+if let recipes = String(contentsOfFile: recipeDataFileName, encoding: NSUTF8StringEncoding, error: nil) {
     
-    //1行ごとに文字列を抜き出す
-    recipe.enumerateLines({
-        line, stop in
-        println(line)
+    //enumerateLines:1行ごとに文字列を抜き出すメソッド
+    //recipesの中から1つずつrecipeを取り出し表示する
+    recipes.enumerateLines({
+        recipe, stop in
+        println(recipe)
     })
     
 }
