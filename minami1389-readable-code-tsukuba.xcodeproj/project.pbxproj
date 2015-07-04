@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		E9F47AEE1B476D6C00C74709 /* minami1389-readable-code-tsukuba */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "minami1389-readable-code-tsukuba"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F47AF11B476D6C00C74709 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		E9F47AF81B4778CA00C74709 /* recipe-data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "recipe-data.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				E9F47AF11B476D6C00C74709 /* main.swift */,
+				E9F47AF81B4778CA00C74709 /* recipe-data.txt */,
 			);
 			path = "minami1389-readable-code-tsukuba";
 			sourceTree = "<group>";
